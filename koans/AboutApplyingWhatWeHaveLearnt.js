@@ -39,11 +39,21 @@ describe("About Applying What We Have Learnt", function() {
 
       var productsICanEat = [];
 
+      _(products).filter(function(x) { 
+        if(_(x).any(function(y){ })
+
+
+      }
       /* solve using filter() & all() / any() */
 
       expect(productsICanEat.length).toBe(0);
   });
 
+   var numbers = [1,2,3];
+    var odd = _(numbers).filter(function (x) { return x % 2 !== 0 });
+
+
+    
   /*********************************************************************************/
 
   it("should add all the natural numbers below 1000 that are multiples of 3 or 5 (imperative)", function () {
@@ -54,7 +64,7 @@ describe("About Applying What We Have Learnt", function() {
         sum += i;
       }
     }
-    
+   
     expect(sum).toBe(233168);
   });
 
@@ -62,8 +72,24 @@ describe("About Applying What We Have Learnt", function() {
 
     var sum = 0;    /* try chaining range() and reduce() */
 
+     var sum = _(_.uniq(_.flatten([_.range(0, 1000, 3),_.range(0, 1000, 5)]))).reduce(function(x,y) {return x+y});
+
+
     expect(sum).toBe(0);
   });
+/*
+
+ var numbers = [1, 2, 3];
+    var reduction = _(numbers).reduce( function(memo, x) {return memo + x}, 
+
+    );
+
+
+      expect(_.range(3)).toEqual([0,1,2]);
+    expect(_.range(1, 4)).toEqual([1,2,3]);
+    expect(_.range(0, -4, -1)).toEqual([0, -1, -2, -3]);
+
+    */
 
   /*********************************************************************************/
    it("should count the ingredient occurrence (imperative)", function () {
@@ -85,6 +111,24 @@ describe("About Applying What We Have Learnt", function() {
 
     expect(ingredientCount['mushrooms']).toBe(undefined);
   });
+
+
+
+  var numbers = [1, 2, 3];
+    var numbersPlus1 = _(numbers).map(function(x) { return x + 1 });
+
+
+expect(_([ [1, 2], [3, 4] ]).flatten()).toEqual([1,2,3,4]);
+
+ var numbers = [1, 2, 3];
+    var reduction = _(numbers).reduce(
+      function(memo, x) {
+        //note: memo is the result from last call, and x is the current number
+        return memo + x;
+      }, 
+      /* initial */ 0
+    );
+
 
   /*********************************************************************************/
   /* UNCOMMENT FOR EXTRA CREDIT */
